@@ -20,6 +20,13 @@ parameters:
     - cipher-local-storage
     - ssl-pinning
 
+  - name: 'MY # name of the parameter; required'
+    type: string # data type of the parameter; required
+    default: in-app-browser
+    values:
+    - in-app-browser
+
+
 pool:
   vmImage: 'ubuntu-latest'
 
