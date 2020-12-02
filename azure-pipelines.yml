@@ -22,11 +22,7 @@ parameters:
 
   - name: 'MY # name of the parameter; required'
     type: string # data type of the parameter; required
-    default: 
-      ${{ if eq(parameters.PLUGIN_NAME, 'in-app-browser') }}:
-        contacts
-      ${{ if eq(parameters.PLUGIN_NAME, 'contacts') }}:
-        in-app-browser
+    default: ${{ parameters.PLUGIN_NAME }}
     values:
     - in-app-browser
     - contacts
