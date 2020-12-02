@@ -7,7 +7,7 @@ trigger:
 - main
 
 parameters:
-  - name: 'PLUGIN_NAME # name of the parameter; required'
+  - name: PLUGIN_NAME # name of the parameter; required
     type: string # data type of the parameter; required
     default: in-app-browser
     values:
@@ -22,9 +22,14 @@ parameters:
 
   - name: 'MY # name of the parameter; required'
     type: string # data type of the parameter; required
-    default: in-app-browser
+    default: 
+      ${{ if eq(parameters.PLUGIN_NAME, 'in-app-browser') }}:
+        contacts
+      ${{ if eq(parameters.PLUGIN_NAME, 'contacts') }}:
+        in-app-browser
     values:
     - in-app-browser
+    - contacts
 
 
 pool:
