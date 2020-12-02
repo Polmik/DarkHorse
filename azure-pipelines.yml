@@ -20,6 +20,7 @@ parameters:
     - cipher-local-storage
     - ssl-pinning
 
+parameters:
   - name: 'MY # name of the parameter; required'
     type: string # data type of the parameter; required
     default: 
